@@ -1,0 +1,17 @@
+[package]
+name = "multi-structs"
+description = "Macro for generating a merged struct from multiple sub-structs"
+version = "0.0.1"
+authors = ["Xidorn Quan <me@upsuper.org>"]
+license = "MIT"
+keywords = ["macro", "struct"]
+repository = "https://github.com/upsuper/multi-structs"
+
+[features]
+default = []
+example_generated = []
+
+[package.metadata.docs.rs]
+features = ["example_generated"]
+
+[dependencies]
