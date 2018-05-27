@@ -1,11 +1,15 @@
 [package]
 name = "multi-structs"
 description = "Macro for generating a merged struct from multiple sub-structs"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Xidorn Quan <me@upsuper.org>"]
 license = "MIT"
 keywords = ["macro", "struct"]
 repository = "https://github.com/upsuper/multi-structs"
+readme = "README.md"
+
+[badges]
+travis-ci = { repository = "upsuper/multi-structs", branch = "master" }
 
 [features]
 default = []

@@ -1,5 +1,8 @@
 # multi-structs
 
+[![Build Status](https://travis-ci.org/upsuper/multi-structs.svg?branch=master)](https://travis-ci.org/upsuper/multi-structs)
+[![Docs](https://docs.rs/multi-structs/badge.svg)](https://docs.rs/multi-structs)
+
 A macro for generating a merged struct from multiple sub-structs.
 
 ## Example
