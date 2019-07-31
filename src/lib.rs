@@ -3,8 +3,7 @@
 //! # Example
 //!
 //! ```
-//! #[macro_use]
-//! extern crate multi_structs;
+//! use multi_structs::multi_structs;
 //!
 //! multi_structs! {
 //!     /// The merged struct.
