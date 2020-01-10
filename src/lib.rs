@@ -89,7 +89,7 @@ macro_rules! multi_structs {
                 )+
             }
         )+
-        
+
         $(#[$($meta)+])*
         pub struct $name {
             $(
@@ -99,7 +99,7 @@ macro_rules! multi_structs {
                 )+
             )+
         }
-        
+
         impl $name {
             /// Create $name.
             pub fn new(
