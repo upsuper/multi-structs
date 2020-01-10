@@ -74,8 +74,8 @@ macro_rules! multi_structs {
                 $var:ident: struct $sub:ident {
                     $(
                         $(#[$($field_meta:tt)+])*
-                        $field:ident: $ty:ty,
-                    )+
+                        $field:ident: $ty:ty
+                    ),+ $(,)?
                 }
             )+
         }
