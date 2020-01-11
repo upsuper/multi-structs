@@ -7,10 +7,10 @@ multi_structs! {
     /// This is the same `Merged` struct defined in
     /// the [crate level example](../index.html#example).
     #[derive(Debug)]
-    struct Merged {
+    pub struct Merged {
         /// Foo
         #[derive(Debug)]
-        foo: struct Foo {
+        pub foo: struct Foo {
             /// a
             a: i32,
             /// b
@@ -18,7 +18,7 @@ multi_structs! {
         }
         /// Bar
         #[derive(Debug)]
-        bar: struct Bar {
+        pub bar: struct Bar {
             /// c
             c: usize,
             /// d
