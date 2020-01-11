@@ -8,22 +8,22 @@
 //! multi_structs! {
 //!     /// The merged struct.
 //!     #[derive(Debug)]
-//!     struct Merged {
+//!     pub struct Merged {
 //!         /// Foo
 //!         #[derive(Debug)]
-//!         foo: struct Foo {
+//!         pub foo: struct Foo {
 //!             /// a
-//!             a: i32,
+//!             pub a: i32,
 //!             /// b
-//!             b: i64,
+//!             pub b: i64,
 //!         }
 //!         /// Bar
 //!         #[derive(Debug)]
-//!         bar: struct Bar {
+//!         pub bar: struct Bar {
 //!             /// c
-//!             c: usize,
+//!             pub c: usize,
 //!             /// d
-//!             d: String,
+//!             pub d: String,
 //!         }
 //!     }
 //! }
