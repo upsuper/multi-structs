@@ -101,7 +101,7 @@ macro_rules! multi_structs {
         }
 
         impl $name {
-            /// Create $name.
+            /// Create this struct from sub-structs.
             $multi_vis fn new(
                 $($var: $sub,)+
             ) -> Self {
@@ -112,7 +112,7 @@ macro_rules! multi_structs {
                 }
             }
 
-            /// Split $name.
+            /// Split this struct into its sub-structs.
             $multi_vis fn split(self) -> ($($sub,)+) {
                 (
                     $(
