@@ -58,6 +58,32 @@
 //!
 //! The visibility of structs and fields is taken directly from their definitions. For the
 //! generated methods `new` and `split`, the visibility of the merged struct is assumed.
+//!
+//! # Empty Structs
+//!
+//! While not necessarily useful, structs are allowed to be empty:
+//!
+//! ```
+//! use multi_structs::multi_structs;
+//!
+//! multi_structs! {
+//!     #[derive(Debug)]
+//!     pub struct Merged {
+//!         #[derive(Debug, Copy, Clone, PartialEq)]
+//!         pub empty: struct Empty { }
+//!     }
+//! }
+//!
+//! fn main() {
+//!     let empty = Empty {};
+//!     let merged = Merged::new(empty);
+//!     println!("{:?}", merged);
+//!
+//!     let (split_empty,) = merged.split();
+//!     assert_eq!(empty, split_empty);
+//! }
+//!
+//! ```
 
 #![no_std]
 
@@ -75,7 +101,7 @@ macro_rules! multi_structs {
                     $(
                         $(#[$($field_meta:tt)+])*
                         $field_vis:vis $field:ident: $ty:ty
-                    ),+ $(,)?
+                    ),* $(,)?
                 }
             )+
         }
@@ -86,7 +112,7 @@ macro_rules! multi_structs {
                 $(
                     $(#[$($field_meta)+])*
                     $field_vis $field: $ty,
-                )+
+                )*
             }
         )+
 
@@ -96,7 +122,7 @@ macro_rules! multi_structs {
                 $(
                     $(#[$($field_meta)+])*
                     $field_vis $field: $ty,
-                )+
+                )*
             )+
         }
 
@@ -107,7 +133,7 @@ macro_rules! multi_structs {
             ) -> Self {
                 Self {
                     $(
-                        $($field: $var.$field,)+
+                        $($field: $var.$field,)*
                     )+
                 }
             }
@@ -117,7 +143,7 @@ macro_rules! multi_structs {
                 (
                     $(
                         $sub {
-                            $($field: self.$field,)+
+                            $($field: self.$field,)*
                         },
                     )+
                 )
